@@ -1,0 +1,22 @@
+{
+  "name": "full-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "husky install || true",
+    "dev": "concurrently -n mobile,bff -c green,blue \"yarn workspace @full/mobile start\" \"yarn workspace @full/bff start:dev\"",
+    "dev:mobile": "yarn workspace @full/mobile start --tunnel",
+    "dev:bff": "yarn workspace @full/bff start:dev",
+    "lint": "eslint . --ext .ts,.tsx,.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "husky": "^9.0.0",
+    "typescript": "^5.4.0"
+  }
+}

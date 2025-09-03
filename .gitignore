@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+
+# Yarn v2+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# build output
+dist
+
+# Expo
+.expo
+
+# environment variables
+.env
+
+# logs
+*.log
