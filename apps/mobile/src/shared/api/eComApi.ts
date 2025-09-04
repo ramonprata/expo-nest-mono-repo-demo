@@ -1,7 +1,8 @@
 import { AxiosHttpClient } from "@full/common";
+import Constants from "expo-constants";
 
 const E_COMMERCE_API_CONFIG = {
-  baseURL: "http://localhost:5000/api/local",
+  baseURL: Constants.expoConfig?.extra?.apiUrl as string,
   headers: {
     "Content-Type": "application/json",
     Authorization: "Bearer token",

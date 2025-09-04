@@ -1,6 +1,6 @@
 import { ThemedText } from "@shared/components";
 import { FlatList, View } from "react-native";
-import { useLoadHighlightedProducts } from "../hooks/useLoadProducts";
+import { useLoadHighlightedProducts } from "../hooks/useProductsData";
 import { IProductView } from "../types/IProduct";
 import LoadingIndicator from "./LoadingIndicator";
 import ProductCard from "./ProductCard";

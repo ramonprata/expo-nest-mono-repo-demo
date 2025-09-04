@@ -1,6 +1,6 @@
 import { BoxContent } from "@shared/components";
 import { View } from "react-native";
-import { useLoadProducts } from "../hooks/useLoadProducts";
+import { useLoadProducts } from "../hooks/useProductsData";
 import { IProductView } from "../types/IProduct";
 import LoadingIndicator from "./LoadingIndicator";
 import ProductCard from "./ProductCard";
