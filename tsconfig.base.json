@@ -9,8 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@full/shared": ["packages/shared/src/index.ts"],
-      "@full/shared/*": ["packages/shared/src/*"]
+      "@full/common/*": ["packages/common/src/*"]
     }
   }
 }
