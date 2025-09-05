@@ -19,6 +19,6 @@ export class ProductsManager {
 
   async getHighlightedProducts(): Promise<IProductView[]> {
     const response = await this.repository.fetchHighlightedProducts();
-    return this.mappers.getProducts.transform(response.data);
+    return this.mappers.getProducts.transform(response.data.slice(0, 2));
   }
 }
