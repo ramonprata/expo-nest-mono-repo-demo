@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IApiDemoPort } from './types/api-demo.port';
+import { IApiDemoPort } from './api-demo.port';
 import type { IHttpClient, IHttpResponse, IProductModel } from '@full/common';
 import { IProductResponse } from './types/products.response';
 import { IHttpClientToken } from './types/tokens';
