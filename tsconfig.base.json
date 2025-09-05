@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@full/common/*": ["packages/common/src/*"]
+      "@full/common": ["packages/common/src/index.ts"]
     }
   }
 }

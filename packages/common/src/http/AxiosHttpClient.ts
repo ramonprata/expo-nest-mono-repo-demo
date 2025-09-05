@@ -12,33 +12,14 @@ import type {
 export interface IAxiosHttpClientConfig extends AxiosRequestConfig {}
 
 export class AxiosHttpClient implements IHttpClient {
-  private static instance: AxiosHttpClient;
   private axiosInstance: AxiosInstance;
   private defaultConfig: IAxiosHttpClientConfig;
 
-  private constructor(defaultConfig: IAxiosHttpClientConfig = {}) {
+  constructor(defaultConfig: IAxiosHttpClientConfig = {}) {
     this.defaultConfig = defaultConfig;
     this.axiosInstance = axios.create(defaultConfig);
 
     this.setupInterceptors();
-  }
-
-  public static getInstance(
-    defaultConfig: IAxiosHttpClientConfig = {}
-  ): AxiosHttpClient {
-    if (!AxiosHttpClient.instance) {
-      AxiosHttpClient.instance = new AxiosHttpClient(defaultConfig);
-    } else {
-      AxiosHttpClient.instance.defaultConfig = {
-        ...AxiosHttpClient.instance.defaultConfig,
-        ...defaultConfig,
-      };
-      AxiosHttpClient.instance.axiosInstance = axios.create(
-        AxiosHttpClient.instance.defaultConfig
-      );
-      AxiosHttpClient.instance.setupInterceptors();
-    }
-    return AxiosHttpClient.instance;
   }
 
   private setupInterceptors(): void {
