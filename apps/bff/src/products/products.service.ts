@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { type IProductModel } from '@full/common';
-import { DemoApiPortToken, type IApiDemoPort } from '../apis/api-demo';
+import { DemoApiPortToken, type IApiDemoPort } from '../shared/apis/api-demo';
 
 @Injectable()
 export class ProductsService {

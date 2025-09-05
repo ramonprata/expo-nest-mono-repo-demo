@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IApiDemoPort } from './api-demo.port';
+import { IApiDemoPort } from './types/api-demo.port';
 import type { IHttpClient, IHttpResponse, IProductModel } from '@full/common';
 import { IProductResponse } from './types/products.response';
-import { IHttpClientToken } from './tokens';
+import { IHttpClientToken } from './types/tokens';
 
 @Injectable()
 export class ApiDemoAdapter implements IApiDemoPort {
@@ -18,7 +18,7 @@ export class ApiDemoAdapter implements IApiDemoPort {
     return new Promise((resolve) => {
       resolve({
         status: 200,
-        data: PRODUCTS_MOCK,
+        data: PRODUCTS_RESPONSE_MOCK,
         headers: {},
         statusText: 'OK',
         config: {},
@@ -27,7 +27,7 @@ export class ApiDemoAdapter implements IApiDemoPort {
   }
 }
 
-const PRODUCTS_MOCK: IProductResponse[] = [
+const PRODUCTS_RESPONSE_MOCK: IProductResponse[] = [
   {
     id: 1,
     name: 'Notebook Pro X15',

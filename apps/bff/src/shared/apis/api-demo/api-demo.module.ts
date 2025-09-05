@@ -2,7 +2,7 @@
 import { Module } from '@nestjs/common';
 import { ApiDemoAdapter } from './api-demo.adapter';
 import { AxiosHttpClient, type IAxiosHttpClientConfig } from '@full/common';
-import { DemoApiPortToken, IHttpClientToken } from './tokens';
+import { DemoApiPortToken, IHttpClientToken } from './types/tokens';
 
 // TODO - CHEDK HOW TO USE CONFIG SERVICE
 // {
