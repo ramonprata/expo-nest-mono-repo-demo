@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { type IProductModel } from '@full/common';
+import { type IProductDto } from '@full/common';
 import { DemoApiPortToken, type IApiDemoPort } from '../shared/apis/api-demo';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class ProductsService {
     @Inject(DemoApiPortToken) private readonly apiAdapter: IApiDemoPort,
   ) {}
 
-  async getProducts(): Promise<IProductModel[]> {
+  async getProducts(): Promise<IProductDto[]> {
     const response = await this.apiAdapter.fetchProducts();
     return response.data.map((item) => ({
       id: String(item.id),

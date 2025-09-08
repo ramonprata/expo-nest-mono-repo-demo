@@ -1,4 +1,4 @@
-export interface IProductModel {
+export interface IProductDto {
   id: string;
   name: string;
   description: string;

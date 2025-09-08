@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IApiDemoPort } from './api-demo.port';
-import type { IHttpClient, IHttpResponse, IProductModel } from '@full/common';
+import type { IHttpClient, IHttpResponse } from '@full/common';
 import { IProductResponse } from './types/products.response';
 import { IHttpClientToken } from './types/tokens';
 
@@ -10,6 +10,7 @@ export class ApiDemoAdapter implements IApiDemoPort {
     @Inject(IHttpClientToken) private readonly httpClient: IHttpClient,
   ) {}
 
+  // TODO - IMPLEMENT REAL API CALL
   // async fetchProducts(): Promise<IHttpResponse<IProductResponse[]>> {
   //   return this.httpClient.get<IProductResponse[]>('/products');
   // }

@@ -1,3 +1,6 @@
+# Run this script
+# powershell -ExecutionPolicy Bypass -File .\setup-bff-proxy.ps1
+
 # setup-bff-proxy.ps1
 # Configure portproxy to expose the BFF running inside WSL on port 3000
 

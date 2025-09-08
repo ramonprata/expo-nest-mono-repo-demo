@@ -1,10 +1,5 @@
-export interface IHttpResponse<T> {
-  data: T;
-  status: number;
-  statusText: string;
-  headers: Record<string, unknown>;
-  config?: unknown;
-}
+import { IHttpResponse } from "./IHttpResponse";
+
 export interface IHttpClient {
   get<T>(url: string, options?: unknown): Promise<IHttpResponse<T>>;
   post<T>(

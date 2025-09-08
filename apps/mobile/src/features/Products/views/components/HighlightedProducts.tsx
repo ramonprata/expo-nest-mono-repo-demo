@@ -1,10 +1,10 @@
 import { ThemedText } from "@shared/components";
 import { FlatList, View } from "react-native";
-import { useLoadHighlightedProducts } from "../hooks/useProductsData";
-import { IProductView } from "../types/IProduct";
+import { useLoadHighlightedProducts } from "../../hooks/useProductsData";
+import { IProductView } from "../../types/IProduct";
 import LoadingIndicator from "./LoadingIndicator";
 import ProductCard from "./ProductCard";
-import { HighlightedProductsContainer } from "./styles/HighlightedProducts.styled";
+import { HighlightedProductsContainer } from "../styles/HighlightedProducts.styled";
 
 const HighlightedProducts = () => {
   const { data, isLoading } = useLoadHighlightedProducts();

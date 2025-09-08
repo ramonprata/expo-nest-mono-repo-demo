@@ -1,8 +1,15 @@
 import { useTheme } from "@emotion/react";
 import { BoxContent, IconButton, ThemedText } from "@shared/components";
-import { useProductsAction, useProductsState } from "../hooks/useProductsSlice";
-import { IProductView } from "../types/IProduct";
-import { Card, CardImage, CardImageWrapper } from "./styles/ProductCard.styled";
+import {
+  useProductsAction,
+  useProductsState,
+} from "../../hooks/useProductsSlice";
+import { IProductView } from "../../types/IProduct";
+import {
+  Card,
+  CardImage,
+  CardImageWrapper,
+} from "../styles/ProductCard.styled";
 
 export interface IProductCardProps extends React.ComponentProps<typeof Card> {
   product: IProductView;

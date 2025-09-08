@@ -20,3 +20,16 @@ dist
 
 # logs
 *.log
+
+
+# Monorepo packages - ignora arquivos gerados
+packages/*/dist/
+packages/*/build/
+packages/*/lib/
+packages/*/esm/
+packages/*/cjs/
+
+# TypeScript outputs
+*.tsbuildinfo
+*.d.ts
+*.js.map

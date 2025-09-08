@@ -12,13 +12,22 @@ export class ProductsManager {
   }
 
   async getProducts(): Promise<IProductView[]> {
-    const response = await this.repository.fetchProducts();
-
-    return this.mappers.getProducts.transform(response.data);
+    try {
+      const response = await this.repository.fetchProducts();
+      return this.mappers.getProducts.transform(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      throw error;
+    }
   }
 
   async getHighlightedProducts(): Promise<IProductView[]> {
-    const response = await this.repository.fetchHighlightedProducts();
-    return this.mappers.getProducts.transform(response.data.slice(0, 2));
+    try {
+      const response = await this.repository.fetchHighlightedProducts();
+      return this.mappers.getProducts.transform(response.data.slice(0, 2));
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      throw error;
+    }
   }
 }

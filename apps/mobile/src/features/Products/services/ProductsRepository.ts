@@ -1,4 +1,4 @@
-import type { IHttpClient, IProductModel } from "@full/common";
+import type { IHttpClient, IProductDto } from "@full/common";
 
 import { E_COM_API_ENTRY_POINTS } from "@shared/api";
 
@@ -8,14 +8,10 @@ export class ProductsRepository implements IProductRepository {
   constructor(private eComApi: IHttpClient) {}
 
   fetchProducts() {
-    return this.eComApi.get<IProductModel[]>(
-      E_COM_API_ENTRY_POINTS.GET_PRODUCTS
-    );
+    return this.eComApi.get<IProductDto[]>(E_COM_API_ENTRY_POINTS.GET_PRODUCTS);
   }
 
   fetchHighlightedProducts() {
-    return this.eComApi.get<IProductModel[]>(
-      E_COM_API_ENTRY_POINTS.GET_PRODUCTS
-    );
+    return this.eComApi.get<IProductDto[]>(E_COM_API_ENTRY_POINTS.GET_PRODUCTS);
   }
 }
