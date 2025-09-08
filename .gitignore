@@ -22,7 +22,7 @@ dist
 *.log
 
 
-# Monorepo packages - ignora arquivos gerados
+# Monorepo packages - ignore build outputs
 packages/*/dist/
 packages/*/build/
 packages/*/lib/
