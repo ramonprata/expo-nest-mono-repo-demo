@@ -21,7 +21,7 @@ export class ProductMapper implements IProductMapper {
     };
   }
 
-  toModel(dto: IProductDto): IProductRequest {
+  toRequest(dto: IProductDto): IProductRequest {
     return {
       name: dto.name,
       description: dto.description,

@@ -7,5 +7,5 @@ export const ProductMapperInjectionToken = Symbol(
 
 export interface IProductMapper {
   toDto(apiProduct: IProductResponse): IProductDto;
-  toModel(dto: IProductDto): IProductRequest;
+  toRequest(dto: IProductDto): IProductRequest;
 }

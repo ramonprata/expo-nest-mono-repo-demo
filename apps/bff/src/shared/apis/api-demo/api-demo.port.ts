@@ -1,5 +1,5 @@
 import { type IHttpResponse } from '@full/common';
-import { IProductResponse } from './types/products.response';
+import { IProductResponse } from './types/product/products.response';
 
 export const DemoApiInjectionToken = Symbol('DemoApiInjectionToken');
 

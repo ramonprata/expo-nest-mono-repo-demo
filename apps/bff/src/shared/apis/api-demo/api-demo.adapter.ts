@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IApiDemoPort } from './api-demo.port';
 import type { IHttpClient, IHttpResponse } from '@full/common';
-import { IProductResponse } from './types/products.response';
+import { IProductResponse } from './types/product/products.response';
 import { IHttpClientInjectionToken } from '../../utils';
 
 @Injectable()
