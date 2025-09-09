@@ -2,7 +2,9 @@
 import { Module } from '@nestjs/common';
 import { ApiDemoAdapter } from './api-demo.adapter';
 import { AxiosHttpClient, type IAxiosHttpClientConfig } from '@full/common';
-import { DemoApiPortToken, IHttpClientToken } from './types/tokens';
+
+import { DemoApiInjectionToken } from './api-demo.port';
+import { IHttpClientInjectionToken } from '../../utils';
 
 // TODO - CHEDK HOW TO USE CONFIG SERVICE
 // {
@@ -19,14 +21,14 @@ const defaultAxiosConfig: IAxiosHttpClientConfig = {
 @Module({
   providers: [
     {
-      provide: IHttpClientToken,
+      provide: IHttpClientInjectionToken,
       useFactory: () => new AxiosHttpClient(defaultAxiosConfig),
     },
     {
-      provide: DemoApiPortToken,
+      provide: DemoApiInjectionToken,
       useClass: ApiDemoAdapter,
     },
   ],
-  exports: [DemoApiPortToken],
+  exports: [DemoApiInjectionToken],
 })
 export class ApiDemoModule {}

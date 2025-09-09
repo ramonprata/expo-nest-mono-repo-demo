@@ -1,21 +1,24 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { type IProductDto } from '@full/common';
-import { DemoApiPortToken, type IApiDemoPort } from '../shared/apis/api-demo';
+import {
+  DemoApiInjectionToken,
+  type IApiDemoPort,
+} from '../shared/apis/api-demo';
+import {
+  type IProductMapper,
+  ProductMapperInjectionToken,
+} from './types/product-mapper';
 
 @Injectable()
 export class ProductsService {
   constructor(
-    @Inject(DemoApiPortToken) private readonly apiAdapter: IApiDemoPort,
+    @Inject(DemoApiInjectionToken) private readonly apiAdapter: IApiDemoPort,
+    @Inject(ProductMapperInjectionToken)
+    private readonly productMapper: IProductMapper,
   ) {}
 
   async getProducts(): Promise<IProductDto[]> {
     const response = await this.apiAdapter.fetchProducts();
-    return response.data.map((item) => ({
-      id: String(item.id),
-      description: item.description,
-      name: item.name,
-      price: item.price_usd,
-      image: { filePath: item.image.file_path, alt: item.image.alt },
-    }));
+    return response.data.map((item) => this.productMapper.toDto(item));
   }
 }

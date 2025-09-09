@@ -2,12 +2,12 @@ import { Inject, Injectable } from '@nestjs/common';
 import { IApiDemoPort } from './api-demo.port';
 import type { IHttpClient, IHttpResponse } from '@full/common';
 import { IProductResponse } from './types/products.response';
-import { IHttpClientToken } from './types/tokens';
+import { IHttpClientInjectionToken } from '../../utils';
 
 @Injectable()
 export class ApiDemoAdapter implements IApiDemoPort {
   constructor(
-    @Inject(IHttpClientToken) private readonly httpClient: IHttpClient,
+    @Inject(IHttpClientInjectionToken) private readonly httpClient: IHttpClient,
   ) {}
 
   // TODO - IMPLEMENT REAL API CALL
