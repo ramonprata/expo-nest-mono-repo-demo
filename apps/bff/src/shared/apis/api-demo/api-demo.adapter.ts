@@ -12,12 +12,10 @@ export class ApiDemo implements IApiDemo {
     @Inject(IHttpClientInjectionToken) private readonly httpClient: IHttpClient,
   ) {}
 
-  // TODO - IMPLEMENT REAL API CALL
-  // async fetchProducts(): Promise<IHttpResponse<IProductResponse[]>> {
-  //   return this.httpClient.get<IProductResponse[]>('/products');
-  // }
-
   async fetchProducts(): Promise<IHttpResponse<IProductResponse[]>> {
+    // TODO - IMPLEMENT REAL API CALL
+    return this.httpClient.get<IProductResponse[]>('/products');
+
     return new Promise((resolve) => {
       resolve({
         status: 200,

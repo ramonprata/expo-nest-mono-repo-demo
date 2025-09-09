@@ -8,7 +8,8 @@
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "@emotion/native": "^11.11.0",

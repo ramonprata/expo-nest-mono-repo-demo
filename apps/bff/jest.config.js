@@ -7,4 +7,9 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
+  moduleNameMapper: {
+    '^@bff-shared/(.*)$': '<rootDir>/shared/$1',
+  },
+  collectCoverageFrom: ['**/*.(t|j)s'],
+  coverageDirectory: '../coverage',
 };

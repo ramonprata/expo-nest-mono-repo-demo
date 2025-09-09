@@ -17,8 +17,10 @@ import { PRODUCTS_RESPONSE_MOCK } from './mocks/produtcts';
 
 describe('ProductsService', () => {
   let service: ProductsService;
-  let apiAdapter: jest.Mocked<IApiDemo>;
-  let productMapper: jest.Mocked<Partial<IProductMapper>>;
+  let apiAdapter: jest.Mocked<IApiDemo> = { fetchProducts: jest.fn() };
+  let productMapper: jest.Mocked<Partial<IProductMapper>> = {
+    toDto: jest.fn(),
+  };
 
   beforeEach(async () => {
     apiAdapter = { fetchProducts: jest.mocked(apiAdapter.fetchProducts) };

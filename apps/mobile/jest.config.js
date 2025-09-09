@@ -15,7 +15,12 @@ module.exports = {
       "|expo-router" +
       ")/)",
   ],
-  testPathIgnorePatterns: ["/node_modules/", "/android/", "/ios/"],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/android/",
+    "/ios/",
+    "\\.mock\\.(ts|tsx)$",
+  ],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
     "^@shared/(.*)$": "<rootDir>/src/shared/$1",
