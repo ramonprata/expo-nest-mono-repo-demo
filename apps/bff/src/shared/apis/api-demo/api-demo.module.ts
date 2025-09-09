@@ -1,6 +1,6 @@
 // api.module.ts
 import { Module } from '@nestjs/common';
-import { ApiDemoAdapter } from './api-demo.adapter';
+import { ApiDemo } from './api-demo.adapter';
 import { AxiosHttpClient, type IAxiosHttpClientConfig } from '@full/common';
 
 import { DemoApiInjectionToken } from './api-demo.port';
@@ -26,7 +26,7 @@ const defaultAxiosConfig: IAxiosHttpClientConfig = {
     },
     {
       provide: DemoApiInjectionToken,
-      useClass: ApiDemoAdapter,
+      useClass: ApiDemo,
     },
   ],
   exports: [DemoApiInjectionToken],

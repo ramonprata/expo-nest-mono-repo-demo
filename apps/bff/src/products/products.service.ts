@@ -1,9 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { type IProductDto } from '@full/common';
-import {
-  DemoApiInjectionToken,
-  type IApiDemoPort,
-} from '../shared/apis/api-demo';
+import { DemoApiInjectionToken, type IApiDemo } from '../shared/apis/api-demo';
 import {
   type IProductMapper,
   ProductMapperInjectionToken,
@@ -12,7 +9,7 @@ import {
 @Injectable()
 export class ProductsService {
   constructor(
-    @Inject(DemoApiInjectionToken) private readonly apiAdapter: IApiDemoPort,
+    @Inject(DemoApiInjectionToken) private readonly apiAdapter: IApiDemo,
     @Inject(ProductMapperInjectionToken)
     private readonly productMapper: IProductMapper,
   ) {}
