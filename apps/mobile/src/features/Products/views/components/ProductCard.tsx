@@ -1,5 +1,7 @@
 import { useTheme } from "@emotion/react";
+
 import { BoxContent, IconButton, ThemedText } from "@shared/components";
+
 import {
   useProductsAction,
   useProductsState,

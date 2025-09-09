@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "pkief.material-icon-theme",
+    "firsttris.vscode-jest-runner",
+    "andys8.jest-snippets",
+    "mhutchie.git-graph",
+    "eamodio.gitlens"
+  ],
+  "unwantedRecommendations": []
+}

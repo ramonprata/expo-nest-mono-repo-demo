@@ -1,4 +1,5 @@
 import { useStore } from "@shared/store";
+
 import type {
   IProductsInitialState,
   TProductsActions,

@@ -1,6 +1,7 @@
 import styled from "@emotion/native";
-import { ThemeType } from "@shared/theme";
 import { View } from "react-native";
+
+import { ThemeType } from "@shared/theme";
 
 export const Card = styled(View)(
   ({ theme, full }: { theme?: ThemeType; full?: boolean }) => ({

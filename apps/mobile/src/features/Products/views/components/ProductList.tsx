@@ -1,11 +1,13 @@
 import { View } from "react-native";
+
 import { BoxContent } from "@shared/components";
+
+import EmptyProducts from "./EmptyProducts";
+import LoadingIndicator from "./LoadingIndicator";
+import ProductCard from "./ProductCard";
 import { useLoadProducts } from "../../hooks/useProductsData";
 import { type IProductView } from "../../types/IProduct";
-import LoadingIndicator from "./LoadingIndicator";
 import { List } from "../styles/ProductList.styled";
-import ProductCard from "./ProductCard";
-import EmptyProducts from "./EmptyProducts";
 
 const ProductList = () => {
   const { products, isLoading } = useLoadProducts();

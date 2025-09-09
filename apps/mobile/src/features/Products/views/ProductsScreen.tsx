@@ -1,4 +1,5 @@
 import { PageBox } from "@shared/components";
+
 import ProductList from "./components/ProductList";
 
 const ProductsScreen = () => {

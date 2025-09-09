@@ -1,4 +1,5 @@
 import { BoxContent, ThemedText } from "@shared/components";
+
 import { HighlightedProducts } from "../../Products";
 import {
   Container,

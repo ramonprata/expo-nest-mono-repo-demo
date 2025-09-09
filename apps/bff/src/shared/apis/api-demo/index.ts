@@ -1,4 +1,5 @@
+export * from './api-demo.module';
 export * from './api-demo.adapter';
 export * from './api-demo.port';
-export * from './types/product/products.response';
-export * from './types/product/product.request';
+export type * from './types/product/products.response';
+export type * from './types/product/product.request';

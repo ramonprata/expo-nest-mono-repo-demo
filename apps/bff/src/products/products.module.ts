@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ProductsService } from './products.service';
-import { ApiDemoModule } from '../shared/apis/api-demo/api-demo.module';
+import { ApiDemoModule } from '@bff-shared/apis/api-demo';
 import { ProductsController } from './products.controller';
 import { ProductMapperInjectionToken } from './types/product-mapper';
 import { ProductMapper } from './product.mappers';

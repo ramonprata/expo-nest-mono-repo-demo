@@ -1,7 +1,8 @@
 import { renderWithProviders } from "@shared/testUtils";
-import ProductList from "../components/ProductList";
-import { useLoadProducts } from "../../hooks/useProductsData";
+
 import { PRODUCTS_MOCK } from "./productsData.mock";
+import { useLoadProducts } from "../../hooks/useProductsData";
+import ProductList from "../components/ProductList";
 
 jest.mock("../../hooks/useProductsData", () => {
   return {

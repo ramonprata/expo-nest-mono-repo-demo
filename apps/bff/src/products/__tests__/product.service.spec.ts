@@ -4,22 +4,22 @@ import {
   DemoApiInjectionToken,
   IApiDemo,
   IProductResponse,
-} from '../../shared/apis/api-demo';
+} from '@bff-shared/apis/api-demo';
 import {
   ProductMapperInjectionToken,
   IProductMapper,
 } from '../types/product-mapper';
-import { IHttpResponse, IProductDto } from '@full/common';
+import { IHttpResponse } from '@full/common';
 import { PRODUCTS_RESPONSE_MOCK } from './mocks/produtcts';
 
 describe('ProductsService', () => {
   let service: ProductsService;
   let apiAdapter: jest.Mocked<IApiDemo>;
-  let productMapper: jest.Mocked<IProductMapper>;
+  let productMapper: jest.Mocked<Partial<IProductMapper>>;
 
   beforeEach(async () => {
-    apiAdapter = { fetchProducts: jest.fn() } as any;
-    productMapper = { toDto: jest.fn() } as any;
+    apiAdapter = { fetchProducts: jest.mocked(apiAdapter.fetchProducts) };
+    productMapper = { toDto: jest.mocked(productMapper.toDto) };
 
     const module: TestingModule = await Test.createTestingModule({
       providers: [

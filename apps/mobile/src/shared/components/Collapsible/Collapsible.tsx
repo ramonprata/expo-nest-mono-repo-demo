@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { Colors } from "@shared/constants/Colors";
 import { useColorScheme } from "@shared/hooks/useColorScheme";
+
 import { IconSymbol } from "../IconSymbol/IconSymbol";
 import { ThemedText } from "../ThemedText/ThemedText";
 import { ThemedView } from "../ThemedView/ThemedView";

@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+
 import { ThemeType } from "../../theme";
 
 export interface IBoxProps {

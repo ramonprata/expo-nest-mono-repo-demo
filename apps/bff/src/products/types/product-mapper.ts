@@ -1,5 +1,5 @@
 import { IProductDto } from '@full/common';
-import { IProductRequest, IProductResponse } from '../../shared/apis/api-demo';
+import { IProductRequest, IProductResponse } from '@bff-shared/apis/api-demo';
 
 export const ProductMapperInjectionToken = Symbol(
   'ProductMapperInjectionToken',

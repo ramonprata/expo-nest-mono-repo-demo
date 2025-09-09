@@ -1,4 +1,5 @@
 import { renderWithProviders, screen } from "@shared/testUtils";
+
 import ProductsScreen from "../ProductsScreen";
 
 jest.mock("../ProductsScreen", () => {

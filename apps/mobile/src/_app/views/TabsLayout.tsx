@@ -1,9 +1,10 @@
+import { useTheme } from "@emotion/react";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Platform } from "react-native";
 
-import { useTheme } from "@emotion/react";
 import { HapticTab, IconSymbol } from "@shared/components";
+
 import Logo from "./Logo";
 
 export default function TabLayout() {

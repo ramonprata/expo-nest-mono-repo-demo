@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+
 import { BoxContent } from "@shared/components";
 
 export const HighlightedProductsContainer = styled(BoxContent)({

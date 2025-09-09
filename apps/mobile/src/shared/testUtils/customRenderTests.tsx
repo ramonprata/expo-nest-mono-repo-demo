@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   RenderOptions,
   render,
@@ -9,7 +10,6 @@ import {
 } from "@testing-library/react-native";
 
 import { darkColorSchema, theme } from "../theme";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const renderWithProviders = (
   Component: React.ReactElement,

@@ -1,5 +1,6 @@
-import { useColorScheme } from "@shared/hooks/useColorScheme";
 import { useFonts } from "expo-font";
+
+import { useColorScheme } from "@shared/hooks/useColorScheme";
 
 export const useInitializeApp = () => {
   // Initialize app state and perform any necessary setup

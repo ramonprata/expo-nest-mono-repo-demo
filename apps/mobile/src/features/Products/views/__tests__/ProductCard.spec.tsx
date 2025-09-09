@@ -1,11 +1,11 @@
 import { renderWithProviders, screen, userEvent } from "@shared/testUtils";
-import ProductCard from "../components/ProductCard";
-import {} from "../../hooks/useProductsSlice";
+
+import { PRODUCT_MOCK } from "./productsData.mock";
 import {
   useProductsAction,
   useProductsState,
 } from "../../hooks/useProductsSlice";
-import { PRODUCT_MOCK } from "./productsData.mock";
+import ProductCard from "../components/ProductCard";
 
 jest.mock("../../hooks/useProductsSlice");
 

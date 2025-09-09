@@ -1,5 +1,5 @@
 import { IHttpResponse } from '@full/common';
-import { IProductResponse } from '@bff/shared/apis/api-demo';
+import { IProductResponse } from '@bff-shared/apis/api-demo';
 
 const DEFAULT_RESPONSE_VALUES = {
   status: 200,

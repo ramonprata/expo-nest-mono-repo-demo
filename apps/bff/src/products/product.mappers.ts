@@ -1,16 +1,14 @@
 import { type IProductDto } from '@full/common';
-import {
+import type {
   IProductRequest,
-  type IProductResponse,
-} from '../shared/apis/api-demo';
+  IProductResponse,
+} from '@bff-shared/apis/api-demo';
 import { IProductMapper } from './types/product-mapper';
 
 export class ProductMapper implements IProductMapper {
-  constructor() {}
-
-  toDto(apiProduct: IProductResponse): IProductDto {
+  public toDto(apiProduct: IProductResponse): IProductDto {
     return {
-      id: String(apiProduct.id),
+      id: apiProduct.id.toString(),
       description: apiProduct.description,
       name: apiProduct.name,
       price: apiProduct.price_usd,
@@ -21,7 +19,7 @@ export class ProductMapper implements IProductMapper {
     };
   }
 
-  toRequest(dto: IProductDto): IProductRequest {
+  public toRequest(dto: IProductDto): IProductRequest {
     return {
       name: dto.name,
       description: dto.description,
