@@ -7,4 +7,6 @@ async function bootstrap() {
   await app.listen(port, '0.0.0.0');
   console.log(`BFF listening on http://localhost:${port}`);
 }
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 bootstrap();

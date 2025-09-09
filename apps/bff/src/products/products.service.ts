@@ -12,9 +12,10 @@ import {
 @Injectable()
 export class ProductsService {
   constructor(
-    @Inject(DemoApiInjectionToken) private readonly apiAdapter: IApiDemo,
     @Inject(ProductMapperInjectionToken)
     private readonly productMapper: IProductMapper,
+    @Inject(DemoApiInjectionToken as symbol)
+    private readonly apiAdapter: IApiDemo,
   ) {}
 
   async getProducts(): Promise<IProductDto[]> {
