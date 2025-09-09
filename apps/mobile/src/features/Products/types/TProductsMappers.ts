@@ -1,4 +1,4 @@
-import type { IProductDto, IProductView } from "./IProduct";
+import type { IProductDto, IProductView } from './IProduct';
 
 export type TProductsMappers = {
   getProducts: {

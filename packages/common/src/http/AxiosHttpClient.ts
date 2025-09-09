@@ -3,11 +3,9 @@ import axios, {
   AxiosRequestConfig,
   AxiosResponse,
   InternalAxiosRequestConfig,
-} from "axios";
-import type {
-  IHttpClient,
-  IHttpResponse,
-} from "../types/utilities/IHttpClient";
+} from 'axios';
+import type { IHttpClient } from './IHttpClient';
+import { IHttpResponse } from './IHttpResponse';
 
 export interface IAxiosHttpClientConfig extends AxiosRequestConfig {}
 
@@ -25,18 +23,18 @@ export class AxiosHttpClient implements IHttpClient {
   private setupInterceptors(): void {
     this.axiosInstance.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
-        config.headers["Authorization"] = `Bearer token`;
+        config.headers['Authorization'] = `Bearer token`;
         return config;
       },
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     );
 
     this.axiosInstance.interceptors.response.use(
       (response: AxiosResponse) => response,
       (error) => {
-        console.error("API Error:", error);
+        console.error('API Error:', error);
         return Promise.reject(error);
-      }
+      },
     );
   }
 
@@ -53,7 +51,7 @@ export class AxiosHttpClient implements IHttpClient {
 
   async get<T>(
     url: string,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ): Promise<IHttpResponse<T>> {
     const res = await this.axiosInstance.get<T>(url, this.mergeConfig(config));
     return {
@@ -68,12 +66,12 @@ export class AxiosHttpClient implements IHttpClient {
   async post<T, K>(
     url: string,
     body?: K,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ): Promise<IHttpResponse<T>> {
     const res = await this.axiosInstance.post<T>(
       url,
       body,
-      this.mergeConfig(config)
+      this.mergeConfig(config),
     );
     return {
       data: res.data,
@@ -87,12 +85,12 @@ export class AxiosHttpClient implements IHttpClient {
   async put<T, K>(
     url: string,
     body?: K,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ): Promise<IHttpResponse<T>> {
     const res = await this.axiosInstance.put<T>(
       url,
       body,
-      this.mergeConfig(config)
+      this.mergeConfig(config),
     );
     return {
       data: res.data,
@@ -105,11 +103,11 @@ export class AxiosHttpClient implements IHttpClient {
 
   async delete<T>(
     url: string,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ): Promise<IHttpResponse<T>> {
     const res = await this.axiosInstance.delete<T>(
       url,
-      this.mergeConfig(config)
+      this.mergeConfig(config),
     );
     return {
       data: res.data,

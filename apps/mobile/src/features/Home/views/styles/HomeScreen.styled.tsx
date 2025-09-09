@@ -1,6 +1,6 @@
-import styled from "@emotion/native";
+import styled from '@emotion/native';
 
-import { BoxContent } from "@shared/components";
+import { BoxContent } from '@shared/components';
 
 export const Container = styled.ScrollView(({ theme }) => ({
   padding: 16,
@@ -12,10 +12,10 @@ export const Section = styled(BoxContent)(({ theme }) => ({
   backgroundColor: theme.colors.transparent,
   borderColor: theme.colors.border,
   borderRadius: 8,
-  alignItems: "center",
-  justifyContent: "center",
+  alignItems: 'center',
+  justifyContent: 'center',
   minHeight: 200,
-  borderStyle: "dashed",
+  borderStyle: 'dashed',
 }));
 
 export const HorizontalScrollSection = styled.View({

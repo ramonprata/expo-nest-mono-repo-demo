@@ -1,11 +1,11 @@
-import { create } from "zustand";
-import { immer } from "zustand/middleware/immer";
+import { create } from 'zustand';
+import { immer } from 'zustand/middleware/immer';
 
 import type {
   IProductsInitialState,
   TProductsActions,
-} from "@features/Products/store/productsSliceStore";
-import productsSliceStore from "@features/Products/store/productsSliceStore";
+} from '@features/Products/store/productsSliceStore';
+import productsSliceStore from '@features/Products/store/productsSliceStore';
 
 export type TGlobalInitialState = IProductsInitialState;
 // combine with other initial states as needed. Example: & HomeInitialState
@@ -13,7 +13,7 @@ export type TGlobalInitialState = IProductsInitialState;
 export type TGlobalActions = TProductsActions;
 // combine with other initial actions as needed: Example: & HomeActions
 
-export type Store = ReturnType<(typeof slices)["productsSliceStore"]>;
+export type Store = ReturnType<(typeof slices)['productsSliceStore']>;
 // combine slices types. Example: & ReturnType<(typeof slices)["homeSliceStore"]>
 
 export type StateCallback = (state: TGlobalInitialState) => TGlobalInitialState;
@@ -30,5 +30,5 @@ export const useStore = create(
     ...productsSliceStore.slice(set as SetCallback<IProductsInitialState>),
     // add other slices here.
     // ...homeSliceStore.slice(set as SetCallback<IHomeInitialState>),
-  }))
+  })),
 );

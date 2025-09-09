@@ -1,4 +1,4 @@
-import type { SetCallback } from "@shared/store";
+import type { SetCallback } from '@shared/store';
 
 export interface IProductsInitialState {
   favoriteProducts: string[];
@@ -17,7 +17,7 @@ const actions = (set: SetCallback<IProductsInitialState>) => ({
   removeFavoriteProduct: (productId: string) =>
     set((state: IProductsInitialState) => {
       state.favoriteProducts = state.favoriteProducts.filter(
-        (id) => id !== productId
+        (id) => id !== productId,
       );
     }),
 

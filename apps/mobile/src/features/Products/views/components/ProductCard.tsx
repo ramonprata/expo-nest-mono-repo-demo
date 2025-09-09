@@ -1,17 +1,17 @@
-import { useTheme } from "@emotion/react";
+import { useTheme } from '@emotion/react';
 
-import { BoxContent, IconButton, ThemedText } from "@shared/components";
+import { BoxContent, IconButton, ThemedText } from '@shared/components';
 
 import {
   useProductsAction,
   useProductsState,
-} from "../../hooks/useProductsSlice";
-import { IProductView } from "../../types/IProduct";
+} from '../../hooks/useProductsSlice';
+import { IProductView } from '../../types/IProduct';
 import {
   Card,
   CardImage,
   CardImageWrapper,
-} from "../styles/ProductCard.styled";
+} from '../styles/ProductCard.styled';
 
 export interface IProductCardProps extends React.ComponentProps<typeof Card> {
   product: IProductView;
@@ -20,11 +20,11 @@ export interface IProductCardProps extends React.ComponentProps<typeof Card> {
 const ProductCard = ({ product, full }: IProductCardProps) => {
   const theme = useTheme();
 
-  const addFavoriteProduct = useProductsAction("addFavoriteProduct");
+  const addFavoriteProduct = useProductsAction('addFavoriteProduct');
 
-  const removeFavoriteProduct = useProductsAction("removeFavoriteProduct");
+  const removeFavoriteProduct = useProductsAction('removeFavoriteProduct');
 
-  const favoriteProducts = useProductsState("favoriteProducts");
+  const favoriteProducts = useProductsState('favoriteProducts');
 
   const isFavorite = favoriteProducts.includes(product.id);
 
@@ -55,7 +55,7 @@ const ProductCard = ({ product, full }: IProductCardProps) => {
           <IconButton
             onPress={handlePress}
             size={24}
-            name={isFavorite ? "heart.fill" : "heart"}
+            name={isFavorite ? 'heart.fill' : 'heart'}
             color={theme.colors.primary}
           />
         </BoxContent>

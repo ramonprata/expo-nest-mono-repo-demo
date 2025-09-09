@@ -1,4 +1,4 @@
-import { Slot } from "expo-router";
+import { Slot } from 'expo-router';
 const RouterSlot = () => {
   return <Slot />;
 };

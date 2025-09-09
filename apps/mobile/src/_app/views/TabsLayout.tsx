@@ -1,11 +1,11 @@
-import { useTheme } from "@emotion/react";
-import { Tabs } from "expo-router";
-import React from "react";
-import { Platform } from "react-native";
+import { useTheme } from '@emotion/react';
+import { Tabs } from 'expo-router';
+import React from 'react';
+import { Platform } from 'react-native';
 
-import { HapticTab, IconSymbol } from "@shared/components";
+import { HapticTab, IconSymbol } from '@shared/components';
 
-import Logo from "./Logo";
+import Logo from './Logo';
 
 export default function TabLayout() {
   const theme = useTheme();
@@ -23,7 +23,7 @@ export default function TabLayout() {
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
-            position: "absolute",
+            position: 'absolute',
           },
           default: {
             backgroundColor: theme.colors.surface,
@@ -34,7 +34,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="home/index"
         options={{
-          title: "Home",
+          title: 'Home',
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="house.fill" color={color} />
           ),
@@ -43,7 +43,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="products/index"
         options={{
-          title: "Products",
+          title: 'Products',
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="star.fill" color={color} />
           ),

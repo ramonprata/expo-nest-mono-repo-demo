@@ -13,7 +13,9 @@
     "lint:fix": "concurrently -n mobile,bff -c green,blue \"yarn workspace @full/mobile lint --fix\" \"yarn workspace @full/bff lint --fix\"",
     "test": "concurrently -n mobile,bff -c green,blue \"yarn workspace @full/bff test\" \"yarn workspace @full/mobile test\"",
     "test:bff": "yarn workspace @full/bff test",
-    "test:mobile": "yarn workspace @full/mobile test"
+    "test:mobile": "yarn workspace @full/mobile test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "concurrently": "^9.0.0",

@@ -1,11 +1,11 @@
-import { BoxContent, ThemedText } from "@shared/components";
+import { BoxContent, ThemedText } from '@shared/components';
 
-import { HighlightedProducts } from "../../Products";
+import { HighlightedProducts } from '../../Products';
 import {
   Container,
   HorizontalScrollSection,
   Section,
-} from "./styles/HomeScreen.styled";
+} from './styles/HomeScreen.styled';
 
 export default function HomeScreen() {
   return (

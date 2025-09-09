@@ -1,1 +1,1 @@
-export * from "./customRenderTests";
+export * from './customRenderTests';

@@ -1,4 +1,4 @@
-import { BoxContent, ThemedText } from "@shared/components";
+import { BoxContent, ThemedText } from '@shared/components';
 
 const EmptyProducts = () => {
   return (

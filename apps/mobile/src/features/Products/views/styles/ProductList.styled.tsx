@@ -1,9 +1,9 @@
-import styled from "@emotion/native";
+import styled from '@emotion/native';
 
 export const List = styled.FlatList({
-  width: "100%",
+  width: '100%',
   gap: 16,
-  display: "flex",
+  display: 'flex',
   paddingHorizontal: 16,
   paddingTop: 16,
 });

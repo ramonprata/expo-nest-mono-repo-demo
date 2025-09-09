@@ -1,5 +1,5 @@
-import { useTheme } from "@emotion/react";
-import { ActivityIndicator } from "react-native";
+import { useTheme } from '@emotion/react';
+import { ActivityIndicator } from 'react-native';
 
 const LoadingIndicator = () => {
   const theme = useTheme();

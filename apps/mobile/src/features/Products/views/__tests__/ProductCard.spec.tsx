@@ -1,15 +1,15 @@
-import { renderWithProviders, screen, userEvent } from "@shared/testUtils";
+import { renderWithProviders, screen, userEvent } from '@shared/testUtils';
 
-import { PRODUCT_MOCK } from "./productsData.mock";
+import { PRODUCT_MOCK } from './productsData.mock';
 import {
   useProductsAction,
   useProductsState,
-} from "../../hooks/useProductsSlice";
-import ProductCard from "../components/ProductCard";
+} from '../../hooks/useProductsSlice';
+import ProductCard from '../components/ProductCard';
 
-jest.mock("../../hooks/useProductsSlice");
+jest.mock('../../hooks/useProductsSlice');
 
-describe("Tests on ProductCard", () => {
+describe('Tests on ProductCard', () => {
   const mockAddFavoriteProduct = jest.fn();
   const mockRemoveFavoriteProduct = jest.fn();
   const mockUseProductsState = jest.mocked(useProductsState);
@@ -18,10 +18,10 @@ describe("Tests on ProductCard", () => {
 
   const mockActions = () => {
     mockUseProductsAction.mockImplementation((actionName) => {
-      if (actionName === "addFavoriteProduct") {
+      if (actionName === 'addFavoriteProduct') {
         return mockAddFavoriteProduct;
       }
-      if (actionName === "removeFavoriteProduct") {
+      if (actionName === 'removeFavoriteProduct') {
         return mockRemoveFavoriteProduct;
       }
       return jest.fn();
@@ -30,7 +30,7 @@ describe("Tests on ProductCard", () => {
 
   const mockState = (favoriteProducts: string[]) => {
     mockUseProductsState.mockImplementation((stateName) => {
-      if (stateName === "favoriteProducts") {
+      if (stateName === 'favoriteProducts') {
         return favoriteProducts;
       }
       return [] as never;
@@ -43,14 +43,14 @@ describe("Tests on ProductCard", () => {
     mockState([]);
   });
 
-  describe("Testing rendering", () => {
-    it("should render correctly", () => {
+  describe('Testing rendering', () => {
+    it('should render correctly', () => {
       renderWithProviders(<ProductCard product={PRODUCT_MOCK} />);
 
       expect(screen.getByText(PRODUCT_MOCK.name)).not.toBeNull();
     });
 
-    it("should show heart icon when product is not favorite", () => {
+    it('should show heart icon when product is not favorite', () => {
       mockState([]);
 
       renderWithProviders(<ProductCard product={PRODUCT_MOCK} />);
@@ -58,8 +58,8 @@ describe("Tests on ProductCard", () => {
       expect(screen.getByText(/heart/)).not.toBeNull();
     });
 
-    it("should show heart fill icon when product is favorite", () => {
-      mockState(["1"]);
+    it('should show heart fill icon when product is favorite', () => {
+      mockState(['1']);
 
       renderWithProviders(<ProductCard product={PRODUCT_MOCK} />);
 
@@ -67,27 +67,27 @@ describe("Tests on ProductCard", () => {
     });
   });
 
-  describe("Testing user events", () => {
-    it("should add product to favorites when product is not a favorite yet", async () => {
+  describe('Testing user events', () => {
+    it('should add product to favorites when product is not a favorite yet', async () => {
       mockState([]);
 
       renderWithProviders(<ProductCard product={PRODUCT_MOCK} />);
 
-      const heartButton = screen.getByRole("button");
+      const heartButton = screen.getByRole('button');
       await user.press(heartButton);
 
-      expect(mockAddFavoriteProduct).toHaveBeenCalledWith("1");
+      expect(mockAddFavoriteProduct).toHaveBeenCalledWith('1');
     });
 
-    it("should remove product from favortites when pressing on heart fill icon", async () => {
-      mockState(["1"]);
+    it('should remove product from favortites when pressing on heart fill icon', async () => {
+      mockState(['1']);
 
       renderWithProviders(<ProductCard product={PRODUCT_MOCK} />);
 
-      const heartFillButton = screen.getByRole("button");
+      const heartFillButton = screen.getByRole('button');
       await user.press(heartFillButton);
 
-      expect(mockRemoveFavoriteProduct).toHaveBeenCalledWith("1");
+      expect(mockRemoveFavoriteProduct).toHaveBeenCalledWith('1');
     });
   });
 });

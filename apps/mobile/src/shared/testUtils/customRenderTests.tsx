@@ -1,5 +1,5 @@
-import { ThemeProvider } from "@emotion/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from '@emotion/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
   RenderOptions,
   render,
@@ -7,13 +7,13 @@ import {
   act,
   waitFor,
   userEvent,
-} from "@testing-library/react-native";
+} from '@testing-library/react-native';
 
-import { darkColorSchema, theme } from "../theme";
+import { darkColorSchema, theme } from '../theme';
 
 const renderWithProviders = (
   Component: React.ReactElement,
-  options?: RenderOptions
+  options?: RenderOptions,
 ) => {
   return render(
     <>
@@ -28,7 +28,7 @@ const renderWithProviders = (
         </ThemeProvider>
       </QueryClientProvider>
     </>,
-    options
+    options,
   );
 };
 

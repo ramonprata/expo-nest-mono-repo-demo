@@ -1,8 +1,8 @@
-import type { IHttpClient, IProductDto } from "@full/common";
+import type { IHttpClient, IProductDto } from '@full/common';
 
-import { E_COM_API_ENTRY_POINTS } from "@shared/api";
+import { E_COM_API_ENTRY_POINTS } from '@shared/api';
 
-import type { IProductRepository } from "../types/IProductRepository";
+import type { IProductRepository } from '../types/IProductRepository';
 
 export class ProductsRepository implements IProductRepository {
   constructor(private eComApi: IHttpClient) {}

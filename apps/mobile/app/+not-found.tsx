@@ -1,2 +1,2 @@
-import { NotFoundScreen } from "@/src/_app";
+import { NotFoundScreen } from '@/src/_app';
 export default NotFoundScreen;

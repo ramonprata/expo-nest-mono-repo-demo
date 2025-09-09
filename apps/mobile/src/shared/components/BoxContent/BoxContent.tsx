@@ -1,4 +1,4 @@
-import { Box, IBoxProps } from "./BoxContent.styled";
+import { Box, IBoxProps } from './BoxContent.styled';
 
 interface IBoxContentProps extends IBoxProps {
   children: React.ReactNode;

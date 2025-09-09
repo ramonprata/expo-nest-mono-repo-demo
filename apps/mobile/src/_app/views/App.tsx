@@ -1,14 +1,14 @@
-import { ThemeProvider as EmotionProvider } from "@emotion/react";
-import { DarkTheme, ThemeProvider } from "@react-navigation/native";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { StatusBar } from "expo-status-bar";
-import "react-native-reanimated";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { ThemeProvider as EmotionProvider } from '@emotion/react';
+import { DarkTheme, ThemeProvider } from '@react-navigation/native';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { StatusBar } from 'expo-status-bar';
+import 'react-native-reanimated';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { darkColorSchema, lightColorSchema, theme } from "@shared/theme";
+import { darkColorSchema, lightColorSchema, theme } from '@shared/theme';
 
-import RouterSlot from "./RouterSlot";
-import { useInitializeApp } from "../hooks/useInitializeApp";
+import RouterSlot from './RouterSlot';
+import { useInitializeApp } from '../hooks/useInitializeApp';
 
 export default function App() {
   const { colorScheme, loaded } = useInitializeApp();
@@ -24,7 +24,7 @@ export default function App() {
         <EmotionProvider
           theme={{
             ...theme,
-            colors: colorScheme === "dark" ? darkColorSchema : lightColorSchema,
+            colors: colorScheme === 'dark' ? darkColorSchema : lightColorSchema,
           }}
         >
           <SafeAreaProvider>

@@ -1,2 +1,2 @@
-import { RootLayout } from "@/src/_app";
+import { RootLayout } from '@/src/_app';
 export default RootLayout;

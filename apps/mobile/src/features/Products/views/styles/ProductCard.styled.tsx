@@ -1,7 +1,7 @@
-import styled from "@emotion/native";
-import { View } from "react-native";
+import styled from '@emotion/native';
+import { View } from 'react-native';
 
-import { ThemeType } from "@shared/theme";
+import { ThemeType } from '@shared/theme';
 
 export const Card = styled(View)(
   ({ theme, full }: { theme?: ThemeType; full?: boolean }) => ({
@@ -18,17 +18,17 @@ export const Card = styled(View)(
     elevation: 2,
     borderWidth: 1,
     borderColor: theme?.colors.border,
-    width: full ? "100%" : 260,
-  })
+    width: full ? '100%' : 260,
+  }),
 );
 
 export const CardImageWrapper = styled.View({
   borderRadius: 8,
-  overflow: "hidden",
+  overflow: 'hidden',
 });
 
 export const CardImage = styled.Image({
-  width: "100%",
+  width: '100%',
   aspectRatio: 3 / 2,
-  objectFit: "scale-down",
+  objectFit: 'scale-down',
 });

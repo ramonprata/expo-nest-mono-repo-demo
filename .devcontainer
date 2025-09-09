@@ -9,6 +9,16 @@
   "postCreateCommand": "corepack enable && yarn install",
   "customizations": {
     "vscode": {
+      "settings": {
+        "prettier.prettierPath": "./node_modules/prettier",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "eslint.workingDirectories": [
+          {
+            "mode": "auto"
+          }
+        ]
+      },
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",

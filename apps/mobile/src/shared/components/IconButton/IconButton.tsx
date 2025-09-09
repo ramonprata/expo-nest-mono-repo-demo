@@ -1,7 +1,7 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 
-import { IconButtonContainer } from "./IconButton.styled";
-import { IconSymbol } from "../IconSymbol/IconSymbol";
+import { IconButtonContainer } from './IconButton.styled';
+import { IconSymbol } from '../IconSymbol/IconSymbol';
 
 export interface IconButtonProps extends ComponentProps<typeof IconSymbol> {
   onPress: () => void;

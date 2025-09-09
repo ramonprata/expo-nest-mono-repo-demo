@@ -1,3 +1,3 @@
-jest.mock("../store", () => ({
+jest.mock('../store', () => ({
   useStore: jest.fn(),
 }));

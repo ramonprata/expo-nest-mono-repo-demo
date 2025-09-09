@@ -1,3 +1,3 @@
-import { ProductsScreen } from "@features/Products";
+import { ProductsScreen } from '@features/Products';
 
 export default ProductsScreen;

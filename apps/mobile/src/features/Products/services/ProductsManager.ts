@@ -1,6 +1,6 @@
-import type { IProductView } from "../types/IProduct";
-import type { IProductRepository } from "../types/IProductRepository";
-import type { TProductsMappers } from "../types/TProductsMappers";
+import type { IProductView } from '../types/IProduct';
+import type { IProductRepository } from '../types/IProductRepository';
+import type { TProductsMappers } from '../types/TProductsMappers';
 
 export class ProductsManager {
   private repository: IProductRepository;
@@ -16,7 +16,7 @@ export class ProductsManager {
       const response = await this.repository.fetchProducts();
       return this.mappers.getProducts.transform(response.data);
     } catch (error) {
-      console.error("Error fetching products:", error);
+      console.error('Error fetching products:', error);
       throw error;
     }
   }
@@ -26,7 +26,7 @@ export class ProductsManager {
       const response = await this.repository.fetchHighlightedProducts();
       return this.mappers.getProducts.transform(response.data.slice(0, 2));
     } catch (error) {
-      console.error("Error fetching products:", error);
+      console.error('Error fetching products:', error);
       throw error;
     }
   }

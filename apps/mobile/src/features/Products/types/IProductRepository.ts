@@ -1,4 +1,4 @@
-import type { IProductDto, IHttpResponse } from "@full/common";
+import type { IProductDto, IHttpResponse } from '@full/common';
 
 export interface IProductRepository {
   fetchProducts(): Promise<IHttpResponse<IProductDto[]>>;

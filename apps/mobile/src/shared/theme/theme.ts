@@ -1,17 +1,17 @@
-import { darkColorSchema } from "./darkColorSchema";
-import { ThemeType, TTextStyle } from "./ThemeType";
+import { darkColorSchema } from './darkColorSchema';
+import { ThemeType, TTextStyle } from './ThemeType';
 
 const defaultTextStyle: TTextStyle = {
   fontSize: 16,
-  fontWeight: "normal",
+  fontWeight: 'normal',
   lineHeight: 24,
-  color: "#000",
+  color: '#000',
 };
 
 export const theme: ThemeType = {
   colors: {
     ...darkColorSchema,
-    transparent: "transparent",
+    transparent: 'transparent',
   },
 
   typography: {
@@ -20,47 +20,47 @@ export const theme: ThemeType = {
     },
     btnText: {
       ...defaultTextStyle,
-      fontWeight: "600",
+      fontWeight: '600',
       lineHeight: 22,
-      color: "#ffffff",
+      color: '#ffffff',
     },
     iconText: {
       ...defaultTextStyle,
       fontSize: 14,
-      fontWeight: "400",
+      fontWeight: '400',
     },
     inputLabel: {
       ...defaultTextStyle,
       fontSize: 14,
-      fontWeight: "500",
+      fontWeight: '500',
     },
     inputText: {
       ...defaultTextStyle,
       fontSize: 16,
-      fontWeight: "400",
+      fontWeight: '400',
     },
     inputTextBold: {
       ...defaultTextStyle,
       fontSize: 16,
-      fontWeight: "700",
+      fontWeight: '700',
     },
     title: {
       ...defaultTextStyle,
       fontSize: 24,
-      fontWeight: "700",
+      fontWeight: '700',
       lineHeight: 32,
     },
     subtitle: {
       ...defaultTextStyle,
       fontSize: 20,
-      fontWeight: "600",
+      fontWeight: '600',
       lineHeight: 28,
     },
     link: {
       ...defaultTextStyle,
       fontSize: 14,
-      fontWeight: "500",
-      color: "primary",
+      fontWeight: '500',
+      color: 'primary',
     },
   },
 
@@ -87,38 +87,38 @@ export const theme: ThemeType = {
     outlined: {
       primary: {
         pressableStyles: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
           borderWidth: 1,
-          borderColor: "primary",
+          borderColor: 'primary',
         },
         typographyStyles: {
-          color: "primary",
+          color: 'primary',
         },
         onPressed: {
-          backgroundColor: "",
+          backgroundColor: '',
         },
       },
       secondary: {
         pressableStyles: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
           borderWidth: 1,
-          borderColor: "secondary",
+          borderColor: 'secondary',
         },
         typographyStyles: {
-          color: "secondary",
+          color: 'secondary',
         },
         onPressed: {
-          backgroundColor: "",
+          backgroundColor: '',
         },
       },
       disabled: {
         pressableStyles: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
           borderWidth: 1,
-          borderColor: "border",
+          borderColor: 'border',
         },
         typographyStyles: {
-          color: "text",
+          color: 'text',
         },
       },
     },
@@ -126,38 +126,38 @@ export const theme: ThemeType = {
     contained: {
       primary: {
         pressableStyles: {
-          backgroundColor: "primary",
+          backgroundColor: 'primary',
           borderWidth: 0,
-          borderColor: "primary",
+          borderColor: 'primary',
         },
         typographyStyles: {
-          color: "text",
+          color: 'text',
         },
         onPressed: {
-          backgroundColor: "primary",
+          backgroundColor: 'primary',
         },
       },
       secondary: {
         pressableStyles: {
-          backgroundColor: "secondary",
+          backgroundColor: 'secondary',
           borderWidth: 0,
-          borderColor: "secondary",
+          borderColor: 'secondary',
         },
         typographyStyles: {
-          color: "text",
+          color: 'text',
         },
         onPressed: {
-          backgroundColor: "secondary",
+          backgroundColor: 'secondary',
         },
       },
       disabled: {
         pressableStyles: {
-          backgroundColor: "background",
+          backgroundColor: 'background',
           borderWidth: 0,
-          borderColor: "border",
+          borderColor: 'border',
         },
         typographyStyles: {
-          color: "secondary",
+          color: 'secondary',
         },
       },
     },

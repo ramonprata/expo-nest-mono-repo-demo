@@ -1,20 +1,20 @@
-import "dotenv/config";
-import { ExpoConfig, ConfigContext } from "@expo/config";
+import 'dotenv/config';
+import { ExpoConfig, ConfigContext } from '@expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => {
-  const apiUrl = process.env.EXPO_PUBLIC_API_URL ?? "http://localhost:3000";
+  const apiUrl = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:3000';
 
   return {
     ...config,
-    name: "mobile",
-    slug: "mobile",
-    version: "1.0.0",
-    orientation: "portrait",
-    icon: "./assets/images/icon.png",
-    scheme: "mobile",
-    userInterfaceStyle: "automatic",
+    name: 'mobile',
+    slug: 'mobile',
+    version: '1.0.0',
+    orientation: 'portrait',
+    icon: './assets/images/icon.png',
+    scheme: 'mobile',
+    userInterfaceStyle: 'automatic',
     newArchEnabled: true,
-    platforms: ["ios", "android"],
+    platforms: ['ios', 'android'],
     extra: {
       apiUrl, // variável que você pode usar no código
     },
@@ -23,21 +23,21 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: "./assets/images/adaptive-icon.png",
-        backgroundColor: "#ffffff",
+        foregroundImage: './assets/images/adaptive-icon.png',
+        backgroundColor: '#ffffff',
       },
       edgeToEdgeEnabled: true,
     },
 
     plugins: [
-      "expo-router",
+      'expo-router',
       [
-        "expo-splash-screen",
+        'expo-splash-screen',
         {
-          image: "./assets/images/splash-icon.png",
+          image: './assets/images/splash-icon.png',
           imageWidth: 200,
-          resizeMode: "contain",
-          backgroundColor: "#ffffff",
+          resizeMode: 'contain',
+          backgroundColor: '#ffffff',
         },
       ],
     ],

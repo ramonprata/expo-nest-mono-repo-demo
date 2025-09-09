@@ -1,16 +1,16 @@
-import { AxiosHttpClient } from "@full/common";
-import Constants from "expo-constants";
+import { AxiosHttpClient } from '@full/common';
+import Constants from 'expo-constants';
 
 const E_COMMERCE_API_CONFIG = {
   baseURL: Constants.expoConfig?.extra?.apiUrl as string,
   headers: {
-    "Content-Type": "application/json",
-    Authorization: "Bearer token",
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer token',
   },
 };
 
 export const E_COM_API_ENTRY_POINTS = {
-  GET_PRODUCTS: "/products",
+  GET_PRODUCTS: '/products',
 };
 
 export const eComApi = new AxiosHttpClient(E_COMMERCE_API_CONFIG);
