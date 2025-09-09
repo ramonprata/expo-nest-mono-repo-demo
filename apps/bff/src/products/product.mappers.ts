@@ -1,8 +1,10 @@
 import { type IProductDto } from '@full/common';
+
 import type {
   IProductRequest,
   IProductResponse,
 } from '@bff-shared/apis/api-demo';
+
 import { IProductMapper } from './types/product-mapper';
 
 export class ProductMapper implements IProductMapper {

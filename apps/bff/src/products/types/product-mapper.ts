@@ -1,6 +1,8 @@
-import { IProductDto } from '@full/common';
-import { IProductRequest, IProductResponse } from '@bff-shared/apis/api-demo';
 import { InjectionToken } from '@nestjs/common';
+
+import { IProductDto } from '@full/common';
+
+import { IProductRequest, IProductResponse } from '@bff-shared/apis/api-demo';
 
 export interface IProductMapper {
   toDto(apiProduct: IProductResponse): IProductDto;

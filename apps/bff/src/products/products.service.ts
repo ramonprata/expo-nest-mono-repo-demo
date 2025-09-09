@@ -1,9 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
+
 import { type IProductDto } from '@full/common';
+
 import {
   DemoApiInjectionToken,
   type IApiDemo,
 } from '@bff-shared/apis/api-demo';
+
 import {
   type IProductMapper,
   ProductMapperInjectionToken,

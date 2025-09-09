@@ -1,15 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ProductsService } from '../products.service';
+
+import { IHttpResponse } from '@full/common';
+
 import {
   DemoApiInjectionToken,
   IApiDemo,
   IProductResponse,
 } from '@bff-shared/apis/api-demo';
+
+import { ProductsService } from '../products.service';
 import {
   ProductMapperInjectionToken,
   IProductMapper,
 } from '../types/product-mapper';
-import { IHttpResponse } from '@full/common';
 import { PRODUCTS_RESPONSE_MOCK } from './mocks/produtcts';
 
 describe('ProductsService', () => {
