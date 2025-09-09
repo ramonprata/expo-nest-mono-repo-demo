@@ -3,14 +3,20 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/common-utils:2": {}
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/yarn:1": {}
   },
   "postCreateCommand": "corepack enable && yarn install",
   "customizations": {
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "pkief.material-icon-theme",
+        "firsttris.vscode-jest-runner",
+        "andys8.jest-snippets",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
       ]
     }
   },

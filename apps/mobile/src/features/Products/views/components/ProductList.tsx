@@ -1,26 +1,27 @@
-import { BoxContent } from "@shared/components";
 import { View } from "react-native";
+import { BoxContent } from "@shared/components";
 import { useLoadProducts } from "../../hooks/useProductsData";
-import { IProductView } from "../../types/IProduct";
+import { type IProductView } from "../../types/IProduct";
 import LoadingIndicator from "./LoadingIndicator";
-import ProductCard from "./ProductCard";
 import { List } from "../styles/ProductList.styled";
+import ProductCard from "./ProductCard";
+import EmptyProducts from "./EmptyProducts";
 
 const ProductList = () => {
-  const { data, isLoading } = useLoadProducts();
+  const { products, isLoading } = useLoadProducts();
 
   if (isLoading) {
     return <LoadingIndicator />;
   }
 
-  if (!data) {
-    return null;
+  if (!products) {
+    return <EmptyProducts />;
   }
 
   return (
     <BoxContent>
       <List
-        data={data}
+        data={products}
         keyExtractor={(item) => (item as IProductView).id.toString()}
         renderItem={({ item }) => (
           <ProductCard full product={item as IProductView} />

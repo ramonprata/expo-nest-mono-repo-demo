@@ -8,7 +8,7 @@ export interface IconButtonProps extends ComponentProps<typeof IconSymbol> {
 
 export const IconButton = ({ name, color, size, onPress }: IconButtonProps) => {
   return (
-    <IconButtonContainer onPress={onPress}>
+    <IconButtonContainer onPress={onPress} accessibilityRole="button">
       <IconSymbol size={size} name={name} color={color} />
     </IconButtonContainer>
   );
