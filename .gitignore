@@ -33,3 +33,6 @@ packages/*/cjs/
 *.tsbuildinfo
 *.d.ts
 *.js.map
+
+# env
+.env.local

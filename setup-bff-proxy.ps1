@@ -1,26 +1,23 @@
-# Run this script
-# powershell -ExecutionPolicy Bypass -File .\setup-bff-proxy.ps1
-
 # setup-bff-proxy.ps1
-# Configure portproxy to expose the BFF running inside WSL on port 3000
+# Expose BFF
+# How to run: powershell -ExecutionPolicy Bypass -File .\setup-bff-proxy.ps1 -WindowsIp <WindowsIp> -Port 3000
 
-# 1. Get the WSL IP using "hostname -I" inside Linux
-$wslIp = wsl hostname -I | ForEach-Object { $_.Trim().Split(" ")[0] }
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$WindowsIp,  # IP da máquina Windows na rede local
+    [int]$Port = 3000    # Porta do BFF
+)
 
-if (-not $wslIp) {
-    Write-Error "❌ Could not get WSL IP."
-    exit 1
-}
+Write-Output "✅ Usando Windows IP: $WindowsIp"
 
-Write-Output "✅ Detected WSL IP: $wslIp"
+# 1. Remove old rule (if exists)
+netsh interface portproxy delete v4tov4 listenport=$Port listenaddress=$WindowsIp 2>$null
 
-# 2. Remove old proxy rule (if it exists)
-netsh interface portproxy delete v4tov4 listenport=3000 listenaddress=0.0.0.0 2>$null
+# 2. Adds new portproxy rule (WindowsIP:Port → 127.0.0.1:Port)
+netsh interface portproxy add v4tov4 listenport=$Port listenaddress=$WindowsIp connectport=$Port connectaddress=127.0.0.1
 
-# 3. Add new proxy rule: forward Windows port 3000 -> WSL port 3000
-netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=$wslIp
+# 3. Allow the port through the firewall (TCP)
+netsh advfirewall firewall add rule name="BFF $Port" dir=in action=allow protocol=TCP localport=$Port 2>$null
 
-# 4. Allow port 3000 through Windows Firewall (ignore if rule already exists)
-netsh advfirewall firewall add rule name="BFF 3000" dir=in action=allow protocol=TCP localport=3000 2>$null
-
-Write-Output "🚀 Port 3000 is now exposed. Use http://<Your-Windows-IP>:3000 from your mobile device."
+Write-Output "🚀 Port $Port is now exposed"
+Write-Output "👉 # Access from your mobile via: http://${WindowsIp}:${Port}"
