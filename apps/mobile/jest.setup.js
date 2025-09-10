@@ -1,4 +1,4 @@
-import '@testing-library/jest-native/extend-expect';
+import '@testing-library/jest-native/legacy-extend-expect';
 
 // Mocks  React Native functions, if needed
 import 'react-native-gesture-handler/jestSetup';

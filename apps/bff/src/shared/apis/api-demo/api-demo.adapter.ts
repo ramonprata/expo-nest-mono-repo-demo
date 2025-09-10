@@ -13,18 +13,20 @@ export class ApiDemo implements IApiDemo {
   ) {}
 
   async fetchProducts(): Promise<IHttpResponse<IProductResponse[]>> {
-    // TODO - IMPLEMENT REAL API CALL
-    return this.httpClient.get<IProductResponse[]>('/products');
-
-    return new Promise((resolve) => {
-      resolve({
-        status: 200,
-        data: PRODUCTS_RESPONSE_MOCK,
-        headers: {},
-        statusText: 'OK',
-        config: {},
-      } as IHttpResponse<IProductResponse[]>);
-    });
+    try {
+      // TODO - IMPLEMENT REAL API CALL
+      return this.httpClient.get<IProductResponse[]>('/products');
+    } catch {
+      return new Promise((resolve) => {
+        resolve({
+          status: 200,
+          data: PRODUCTS_RESPONSE_MOCK,
+          headers: {},
+          statusText: 'OK',
+          config: {},
+        } as IHttpResponse<IProductResponse[]>);
+      });
+    }
   }
 }
 

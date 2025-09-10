@@ -8,7 +8,7 @@ export const useLoadProducts = () => {
     queryFn: () => productsManager.getProducts(),
   });
 
-  return { products: data.length ? data : null, error, isLoading };
+  return { products: data?.length ? data : null, error, isLoading };
 };
 
 export const useLoadHighlightedProducts = () => {
@@ -17,5 +17,5 @@ export const useLoadHighlightedProducts = () => {
     queryFn: () => productsManager.getHighlightedProducts(),
   });
 
-  return { products: data.length ? data : null, error, isLoading };
+  return { products: data?.length ? data : null, error, isLoading };
 };
