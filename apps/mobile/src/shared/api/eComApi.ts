@@ -11,6 +11,7 @@ const E_COMMERCE_API_CONFIG = {
 
 export const E_COM_API_ENTRY_POINTS = {
   GET_PRODUCTS: '/products',
+  POST_CHECK_USER_INSIDE_RESORT: '/location/checkUserInsideResort',
 };
 
 export const eComApi = new AxiosHttpClient(E_COMMERCE_API_CONFIG);
