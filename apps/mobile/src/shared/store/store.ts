@@ -7,6 +7,8 @@ import type {
 } from '@features/Products/store/productsSliceStore';
 import productsSliceStore from '@features/Products/store/productsSliceStore';
 
+import { Storage } from '../base';
+
 export type TGlobalInitialState = IProductsInitialState;
 // combine with other initial states as needed. Example: & HomeInitialState
 
@@ -17,7 +19,9 @@ export type Store = ReturnType<(typeof slices)['productsSliceStore']>;
 // combine slices types. Example: & ReturnType<(typeof slices)["homeSliceStore"]>
 
 export type StateCallback = (state: TGlobalInitialState) => TGlobalInitialState;
-export type SetCallback<T> = (set: (state: T) => void) => void;
+export type SetCallback<T> = (
+  set: (state: T, storageInstance?: Storage) => void,
+) => void;
 
 export const slices = {
   productsSliceStore: productsSliceStore.slice,
@@ -27,7 +31,10 @@ export const slices = {
 
 export const useStore = create(
   immer<Store>((set) => ({
-    ...productsSliceStore.slice(set as SetCallback<IProductsInitialState>),
+    ...productsSliceStore.slice(
+      set as SetCallback<IProductsInitialState>,
+      Storage.getInstance(),
+    ),
     // add other slices here.
     // ...homeSliceStore.slice(set as SetCallback<IHomeInitialState>),
   })),
