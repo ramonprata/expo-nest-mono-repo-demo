@@ -6,3 +6,4 @@ export * from './IconSymbol/IconSymbol';
 export * from './PageBox/PageBox';
 export * from './ThemedText/ThemedText';
 export * from './ThemedView/ThemedView';
+export * from './CameraPreview/CameraPreview';
