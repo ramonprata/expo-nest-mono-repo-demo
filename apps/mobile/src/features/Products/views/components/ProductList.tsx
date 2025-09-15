@@ -10,13 +10,13 @@ import { type IProductView } from '../../types/IProduct';
 import { List } from '../styles/ProductList.styled';
 
 const ProductList = () => {
-  const { products, isLoading } = useLoadProducts();
+  const { products, isLoading, error } = useLoadProducts();
 
   if (isLoading) {
     return <LoadingIndicator />;
   }
 
-  if (!products) {
+  if (!products || error) {
     return <EmptyProducts />;
   }
 

@@ -9,7 +9,7 @@ import { IProductView } from '../../types/IProduct';
 import { HighlightedProductsContainer } from '../styles/HighlightedProducts.styled';
 
 const HighlightedProducts = () => {
-  const { data, isLoading } = useLoadHighlightedProducts();
+  const { products, isLoading } = useLoadHighlightedProducts();
 
   if (isLoading) {
     return (
@@ -20,14 +20,14 @@ const HighlightedProducts = () => {
     );
   }
 
-  if (!data) {
+  if (!products) {
     return null;
   }
 
   return (
     <FlatList
       horizontal
-      data={data}
+      data={products}
       keyExtractor={(item) => (item as IProductView).id}
       renderItem={({ item }) => <ProductCard product={item as IProductView} />}
       showsHorizontalScrollIndicator={false}

@@ -1,0 +1,36 @@
+{
+  "cli": {
+    "version": ">= 3.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "env": {
+        "EXPO_PUBLIC_APP_CONFIG": "local",
+        "EXPO_PUBLIC_APP_VARIANT": "development"
+      },
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
+      }
+    },
+    "preview": {
+      "env": {
+        "EXPO_PUBLIC_APP_CONFIG": "local",
+        "EXPO_PUBLIC_APP_VARIANT": "preview"
+      },
+      "developmentClient": false,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
+      }
+    }
+  }
+}

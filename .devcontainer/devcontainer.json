@@ -5,7 +5,6 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "postCreateCommand": "npm install -g expo-cli eas-cli",
   "workspaceFolder": "/workspaces/expo-nest-mono-repo-demo",
   "customizations": {
     "vscode": {

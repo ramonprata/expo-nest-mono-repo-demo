@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 
 const E_COMMERCE_API_CONFIG = {
   baseURL: Constants.expoConfig?.extra?.apiUrl as string,
+  timeout: 2000,
   headers: {
     'Content-Type': 'application/json',
     Authorization: 'Bearer token',

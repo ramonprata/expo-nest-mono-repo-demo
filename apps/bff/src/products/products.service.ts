@@ -22,11 +22,10 @@ export class ProductsService {
   ) {}
 
   async getProducts(): Promise<IProductDto[]> {
+    throw new Error(`Failed to fetch products`);
     try {
       const response = await this.apiAdapter.fetchProducts();
       return response.data.map((item) => this.productMapper.toDto(item));
-    } catch {
-      throw new Error(`Failed to fetch products`);
-    }
+    } catch {}
   }
 }
